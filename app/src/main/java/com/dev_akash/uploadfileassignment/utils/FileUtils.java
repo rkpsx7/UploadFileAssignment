@@ -1,9 +1,9 @@
 package com.dev_akash.uploadfileassignment.utils;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Environment;
 import android.provider.OpenableColumns;
 
 
@@ -17,18 +17,23 @@ public class FileUtils {
     public static File createFileFromUri(Context context, Uri uri) {
         String displayName = getFileName(context,uri);
 
-        File tempFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), displayName);
-
         try {
-            File file = new File(tempFile.getPath());
-
-            InputStream inputStream = context.getContentResolver().openInputStream(uri);
+            // Creating a new file in the app's cache directory and prepare output stream
+            File file = new File(context.getCacheDir(), displayName);
             OutputStream outputStream = new FileOutputStream(file);
-            byte[] buffer = new byte[4096];
+
+            // Opening an input stream using the URI
+            ContentResolver contentResolver = context.getContentResolver();
+            InputStream inputStream = contentResolver.openInputStream(uri);
+
+            //Reading and copying the data of the input stream to the output stream
+            byte[] buffer = new byte[1024];
             int bytesRead;
             while ((bytesRead = inputStream.read(buffer)) != -1) {
                 outputStream.write(buffer, 0, bytesRead);
             }
+
+            //closing the streams to free resources
             outputStream.close();
             inputStream.close();
 
@@ -41,13 +46,13 @@ public class FileUtils {
     }
 
     public static String getFileName(Context context,Uri uri) {
-        Cursor returnCursor = context.getContentResolver().query(uri, null, null, null, null);
+        Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
 
-        int nameIndex = returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
-        returnCursor.moveToFirst();
+        int nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+        cursor.moveToFirst();
 
-        String fileName = returnCursor.getString(nameIndex);
-        returnCursor.close();
+        String fileName = cursor.getString(nameIndex);
+        cursor.close();
         return fileName;
     }
 

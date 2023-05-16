@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType("*/*");
-        intent.putExtra(Intent.EXTRA_MIME_TYPES, ACCEPTED_MIME_TYPES);
+        intent.putExtra(Intent.EXTRA_MIME_TYPES, ACCEPTED_MIME_TYPES);// declaring required file types like .pdf, .docx or .xlsx
         startActivityForResult(intent, REQUEST_FILE_CODE);
     }
 
@@ -71,15 +71,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Performs file upload on background Thread using DropBox Client.
+     */
     private void uploadFile(Uri uri) {
         new Thread(() -> {
             showToast(getString(R.string.starting_file_upload));
+
+            //Resolving the file ACTUAL File name from URI.
             String fileName = getFileName(MainActivity.this, uri);
+
+            //declaring Storage PATH on cloud
             String destinationPath = DBx_FOLDER_PATH + fileName;
 
+            //creating actual File Object using URI
             File file = createFileFromUri(MainActivity.this, uri);
 
             try (InputStream inputStream = new FileInputStream(file)) {
+                //attempting file upload using dropbox client.
                 dropboxClient.files().uploadBuilder(destinationPath).withMode(WriteMode.OVERWRITE).uploadAndFinish(inputStream);
 
                 showToast(getString(R.string.upload_success_msg));
@@ -92,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 
+    /**
+     * This fn create a sharable link of the uploaded file.
+     * If the file already exists, then exception is thrown by DropBox SDK
+     * and existing file link is retrieved from this exception data in catch block.
+     */
     private void createSharedLink(String destinationPath) {
         try {
             SharedLinkMetadata sharedLinkMetadata = dropboxClient.sharing().createSharedLinkWithSettings(destinationPath, SharedLinkSettings.newBuilder().build());
@@ -107,7 +121,9 @@ public class MainActivity extends AppCompatActivity {
                 showToast(getString(R.string.link_retrieved_successfully));
                 runOnUiThread(() -> setDownloadLink(existingSharedLinkUrl));
             }
+            else showToast(getString(R.string.something_went_wrong_msg));
         } catch (Exception e) {
+            showToast(getString(R.string.something_went_wrong_msg));
         }
 
 
@@ -121,6 +137,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * firing an Intent to get supported apps to share link
+     * For Ex. WhatsApp, Email Client etc.
+     */
     private void shareLink(String link) {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
