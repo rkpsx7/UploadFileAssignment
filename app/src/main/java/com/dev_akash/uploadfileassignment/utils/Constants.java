@@ -2,7 +2,7 @@ package com.dev_akash.uploadfileassignment.utils;
 
 public class Constants {
 
-    public static final String ACCESS_TOKEN = "sl.BeeJL3eo5E9tXjPIDtNfAKz9IP_UL4xtPUKVy9x0NrxQjEzRuM3GbBt6nzbJoWMEZmxVMmOHUAxlBHL2CjSUBl6nGdffROLLCFZHBBACPhLzi_oevDZkSF6kQPzDUXmXLLfhoVnz";
+    public static final String ACCESS_TOKEN = "sl.BedmmFuuCopkX_dJ1YeI6-8d6gRfcqpvou3AnpvsQUgrfQ3jLqIesocEXNs_vtJzJ0Z1o_aLqf2hVhsPmKQgKxFDcj1oLJZ42DIvEd82yfUzx0NS8YKCZaAr0kZUlFABQtyo8puK";
 
     public static final String[] ACCEPTED_MIME_TYPES = {
             "application/pdf",
