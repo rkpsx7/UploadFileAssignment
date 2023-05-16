@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">UploadFileAssignment</string>
     <string name="choose_document">Choose document</string>
-    <string name="app_key">j2xx3s4bztn0jkw</string>
     <string name="upload_success_msg">File Upload Successful</string>
     <string name="something_went_wrong_msg">Something went wrong in uploading the file</string>
     <string name="link_will_appear_here">Link will appear here after successful upload\nYou can click here to share the link</string>
     <string name="link_generated">Link Generated\nClick on the link to share it</string>
     <string name="link_retrieved_successfully">Link retrieved successfully\nClick on the link to share it</string>
     <string name="starting_file_upload">Starting file upload...</string>
+    <string name="key_for_access">sl.Befp-wXNPsmC94vLUK8DIenwEKAQco2pzfuyG_uzfD7m3LwKiYUH9fv7iLbGhv5h2Yu2j13HJ7_byGZRdtJzckr3XvJVlHw65wDtCohX-BZI7S14IA9xQPaNQxcndNq0RSyA6q9-</string>
 </resources>
