@@ -13,7 +13,7 @@
 
 ## Tech Stack
 - Android
-- Java
+- Java (As required according to the assignment doc)
 - Storage Access Framework
 - Java Threads for multi-threading
 
