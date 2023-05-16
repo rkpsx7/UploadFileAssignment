@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDbxClient() {
         DbxRequestConfig config = DbxRequestConfig.newBuilder(DBx_APP_NAME).build();
-        dropboxClient = new DbxClientV2(config, getString(R.string.key_for_access));
+        dropboxClient = new DbxClientV2(config, ACCESS_TOKEN);
     }
 
     private void launchFilePicker() {
