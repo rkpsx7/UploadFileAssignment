@@ -1,23 +1,24 @@
 # UploadFileAssignment
 
-Select and upload files without any storage permission working on Android 13 and lower versions also.
+Select and upload files without any **storage permission** working on Android 13 and lower versions also.
 
 ## Features Implemented:-
-- Choose doc files like .pdf, .docx or .xlsx and upload them to dropbox cloud.
+- Choose doc files like .pdf, .docx or .xlsx and upload them to server.
 - Share link of uploaded file easily.
-
-### [Click here to watch Video-Demo](https://drive.google.com/file/d/1YMzVuLNduZLWkWDxqWzuuzod26EYq6V8/view?usp=sharing) (Pls Switch to 1080p quality in player).
-
-### **NOTE** :- Please use this apk given below only for testing the app as DropBox api blocks ACCESS to storage when code is shared on Github PUBLICALLY. If you face any issue with this, please contact me. Contact details can be found in the email that I will or had sent you in Gmail.
-### [Click here to get APK of the application](https://drive.google.com/file/d/1yzmk5IV1iyIScel9GR9qAqXa0ZTllgA_/view?usp=sharing)
 
 ## Tech Stack
 - Android
 - Java (As required according to the assignment doc)
 - Storage Access Framework
+- Dagger-Hilt for Dependency Injection
+- Retrofit2 for RestApi
+- MVVM Architecture
+- Okhttp Client for Authentication Interceptor
 - Java Threads for multi-threading
 
+### [Click here to watch Video-Demo](https://drive.google.com/file/d/1YMzVuLNduZLWkWDxqWzuuzod26EYq6V8/view?usp=sharing) (Pls Switch to 1080p quality in player).
 
+### [Click here to get APK of the application](https://drive.google.com/file/d/1yzmk5IV1iyIScel9GR9qAqXa0ZTllgA_/view?usp=sharing)
 
 ## Installation
 
