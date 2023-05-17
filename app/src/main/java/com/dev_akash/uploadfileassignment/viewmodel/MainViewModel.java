@@ -62,4 +62,10 @@ public class MainViewModel extends ViewModel {
             }
         });
     }
+
+    @Override
+    protected void onCleared() {
+        executorService.shutdownNow();
+        super.onCleared();
+    }
 }
