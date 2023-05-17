@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">UploadFileAssignment</string>
     <string name="choose_document">Choose document</string>
-    <string name="upload_success_msg">File Upload Successful</string>
+    <string name="upload_success_msg">File Upload Successful\nLink Generated, Click on the link to share it</string>
     <string name="something_went_wrong_msg">Something went wrong in uploading the file</string>
     <string name="link_will_appear_here">Link will appear here after successful upload\nYou can click here to share the link</string>
-    <string name="link_generated">Link Generated\nClick on the link to share it</string>
-    <string name="link_retrieved_successfully">Link retrieved successfully\nClick on the link to share it</string>
     <string name="starting_file_upload">Starting file upload…</string>
 </resources>

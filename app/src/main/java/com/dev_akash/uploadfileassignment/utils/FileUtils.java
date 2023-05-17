@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.provider.OpenableColumns;
 
 
+import com.dev_akash.uploadfileassignment.ApplicationKClass;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,7 +16,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class FileUtils {
-    public static File createFileFromUri(Context context, Uri uri) {
+    public static File createFileFromUri(Uri uri) {
+        Context context = ApplicationKClass.INSTANCE.getApplicationContext();
+
         String displayName = getFileName(context,uri);
 
         try {

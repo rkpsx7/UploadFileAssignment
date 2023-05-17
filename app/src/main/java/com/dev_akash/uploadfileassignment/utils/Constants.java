@@ -2,14 +2,14 @@ package com.dev_akash.uploadfileassignment.utils;
 
 public class Constants {
 
-    public static final String ACCESS_TOKEN = "sl.BeeJL3eo5E9tXjPIDtNfAKz9IP_UL4xtPUKVy9x0NrxQjEzRuM3GbBt6nzbJoWMEZmxVMmOHUAxlBHL2CjSUBl6nGdffROLLCFZHBBACPhLzi_oevDZkSF6kQPzDUXmXLLfhoVnz";
-
+    public static final String BEARER_TOKEN = "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQzNzA5OTksImlzcyI6Imh0dHBzOi8vYmUxMi5wbGF0Zm9ybS5zaW1wbGlmaWkuY29tL2FwaS92MS9hZG1pbi9hdXRoZW50aWNhdGUiLCJpYXQiOjE2ODQyMTEyMTIsImV4cCI6MTc0NDY5MTIxMiwibmJmIjoxNjg0MjExMjEyLCJqdGkiOiJ3b29HeDFmZ0I2N1FGc0pJIn0.DF__mHMdlHIT6lQgfG76_h_LgrjL4D9u_ivTXGiTlBM";
     public static final String[] ACCEPTED_MIME_TYPES = {
             "application/pdf",
             "application/msword",
             "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     };
 
-    public static final String DBx_APP_NAME = "SimplifiiUploadApp";
-    public static final String DBx_FOLDER_PATH = "/SimplifiiUploads/";
+    public static String GENERIC_MIME_TYPE = "application/octet-stream";
+
+    public static String BASE_URL = "https://be12.platform.simplifii.com/";
 }
