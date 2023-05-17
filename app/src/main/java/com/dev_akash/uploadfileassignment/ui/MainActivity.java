@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, link);
-        startActivity(Intent.createChooser(shareIntent, "Share Link"));
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_link)));
     }
 
 
