@@ -27,7 +27,7 @@ Install my-project with Android Studio
 ```bash
   open Terminal or CMD (Windows)
   paste this command given below in Terminal
-  command:- git clone https://github.com/rkpsx7/UploadFileAssignment
+  command:- git clone https://github.com/rkpsx7/UploadFileAssignment.git
   OR
 
   Open Android Studio
